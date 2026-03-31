@@ -1,8 +1,8 @@
 ---
 title: "L01 Review"
 subtitle: "Data Science 3 with R (STAT 301-3)"
-author: "YOUR NAME"
-pagetitle: "L01 YOUR NAME"
+author: "Katya Shepherd Johnson"
+pagetitle: "L01 Katya Shepherd Johnson"
 date: today
 
 format:
@@ -26,9 +26,7 @@ citation-location: margin
 ::: {.callout-tip icon="false"}
 ## Github Repo Link
 
-To link to your github **repo**sitory, appropriately edit the example link below. Meaning replace `https://your-github-repo-url` with your github repo url. Suggest verifying the link works before submitting.
-
-[https://your-github-repo-url](https://your-github-repo-url)
+[Katya's Github Repo](https://github.com/stat301-3-2026-spring/l01-review-kshepjohn.git)
 :::
 
 ## Overview
@@ -57,7 +55,9 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Supervised learning has a target variable that is being predicted by other variables. You are using a function of dependent variables to get the patterns of an external variable. 
+
+Unsupervised learning is used to learn the patterns in a variable. There is no prediction occurring, instead it is more like clustering. 
 
 :::
 
@@ -191,7 +191,11 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+First, you break the data into a training set and a testing set. Say that there are 5 folds. You would shuffle the rows randomly or stratified randomly. Next, you would break this shuffled data into 5 groups. For the first iteration, four of the groups would become the analysis set that is used to train the model, and then this trained model would be tested with the remaining one group (the assessment set). The resulting metrics such as the RMSE are then taken from the predictions on the assessment set. The process used for this iteration would then be repeated so that each of the 5 groups are used as the assessment set one time. If there are repeats, then you would repeat the above process using the training set. This gives many different estimates of the RMSE that can be averaged to estimate what a possible value would be for the test RMSE. 
+
+We use it because...
+
+
 
 :::
 
