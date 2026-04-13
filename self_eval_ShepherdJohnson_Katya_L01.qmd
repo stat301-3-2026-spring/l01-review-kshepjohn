@@ -1,0 +1,493 @@
+---
+title: "Self Evaluation L01 Review"
+subtitle: |
+  | Data Science 2 with R 
+  | STAT 301-2
+author: "Katya Shepherd Johnson"
+pagetitle: "Self Evaluation PQ2 Katya Shepherd Johnson"
+date: today
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 4
+    toc-location: left
+    embed-resources: true
+    code-fold: false
+    link-external-newwindow: true
+
+execute:
+  warning: false
+  error: true
+
+from: markdown+emoji
+reference-location: margin
+citation-location: margin 
+---
+
+::: {.callout-tip icon="false"}
+## Github Repo Link
+
+[Katya's Github Repo](https://github.com/stat301-3-2026-spring/l01-review-kshepjohn.git)
+:::
+
+## Overview
+
+The goal of this lab is to review machine learning/predictive modeling vocabulary and concepts covered in Data Science 2 with R (STAT 301-2).
+
+## Questions
+
+When completing the following questions ensure your solutions are neatly formatted and clearly indicated. Consider including diagrams/images in some of your solutions, if it helps to make things easier to describe/discuss.
+
+### Question 1
+
+Provide a brief outline/overview of the steps involved in a supervised machine learning process. Could provide this as a bulleted list. 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Supervised machine learning has a response variable that is associated with it, so the first step would be deciding what variable you want to have as the target variable to predict. This decision also includes deciding what type of model will be used such as regression or classification.
+
+Next, we want to clean the data and then split into a training and testing dataset. 
+
+Training models is the next step, possibly with hyperparameter tuning to choose the best possible version of each model. 
+
+After models are trained, comparing them allows for one model to be chosen to use the testing data on. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+3
+
+## Explanation
+
+I correctly identified many of the listed steps in the solution, but I left out some important ones such as data collection, resampling, feature engineering, etc. I was not specific or in-depth enough.  
+
+## Updated solution
+
+First, one must collect data to train and test models on. Next is data preparation and cleaning which includes dealing with missingness and EDA. Splitting the data in to training and testing is the next step. This may also include setting up resampling such as cross validation by folding the data. To set up the models to be trained, one must conduct feature engineering (transforming variables), recipe building, and model specification (setting engines and choosing what kind of model it will be). Tuning models, especially ones with hyperparameters, comes next so that the best versions of each model can be selected and compared. The best model and its corresponding hyperparameters is decided and then that model is fit to the entire training dataset. Finally, the model uses the testing data, allowing for final assessment based on various metrics such as RMSE. 
+
+:::
+
+### Question 2
+
+Explain the difference between supervised and unsupervised learning.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Supervised learning has a target variable that is being predicted by other variables. You are using a function of dependent variables to get the patterns of an external variable. 
+
+Unsupervised learning is used to learn the patterns in a variable. There is no prediction occurring, instead it is more like clustering. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I missed some nuance, but I got the most essential parts.
+
+## Updated solution
+Supervised learning has an outcome variable that is being predicted by other variables. You are using a function of dependent variables to get the patterns of an external variable. We are doing this to try to train a model that will accurately predict the outcome variable when it takes in data that it has not been previously exposed to. 
+
+Unsupervised learning is used to learn the patterns between all of the variables. There is no prediction for one single response variable. 
+
+:::
+
+### Question 3 
+
+In general, we can classify a model by its purpose into 1 of the 3 categories below. Provide a brief description of the goals of these model classes.
+
+#### Descriptive Models 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+The goal of a descriptive model is to describe patterns or trends in data. 
+
+:::
+
+#### Inferential Models
+
+::: {.callout-tip icon="false"}
+## Solution
+
+The goal of an inferential model is to answer a research question or take data to test hypotheses.
+
+:::
+
+#### Predictive Models
+
+::: {.callout-tip icon="false"}
+## Solution
+
+The goal is to take data to make accurate predictions about new data. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I did not get every single word of each bullet point, but I was mostly correct for each. I could have emphasized the underlying assumptions for inferential models.
+
+:::
+
+### Question 4 
+
+We can further describe/classify predictive models by how they were derived or developed as being either mechanistic or empirically driven. 
+
+#### Part (a)
+
+What does it mean to be a mechanistic model?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+A mechanistic model is assumed to follow a known formula or equation. It allows you to estimate a set of parameters. These models are easy to interpret, fast to train, and do not require much data. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I did not mention that it is the same as a parametric model, mention the inflexibility of the model, or give examples, but the rest is correct. 
+
+:::
+
+
+#### Part (b)
+
+What does it mean to be an empirically driven model?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+An empirically driven model has no associated assumptions which makes it more flexible. However, it requires more observations and time to train. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+Although I did not explicitly mention that we are capturing patterns without caring about the underlying process, the rest is spot on. 
+
+:::
+
+#### Part (c)
+
+How does the mechanistic and empirically driven model terminology relate to the parametric and nonparametric model terminology? 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+A mechanistic model is interchangeable with a parametric one. An empirically driven model is nonparametric because it does not assume that there are parameters involved in a model. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I got it exactly right. 
+
+:::
+
+#### Part (d)
+
+In general, is a mechanistic or empirically driven model easier to interpret? Explain.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+A mechanistic model is generally easier to explain because it follows a specific equation with estimated parameters. This is different from an empirically driven model because that is built from data only rather than having interpretable parameters. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I was correct and had similar explanations as the solutions. 
+
+:::
+
+#### Part (e)
+
+How does mechanistic and empirically driven model terminology relate to the idea of model flexibility? That is, which would be more or less flexible than the other.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Empirically driven models are more flexible as they are not restrained by fitting a certain form or by model assumptions like a mechanistic one would be. 
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I have basically the exact right answer with slightly different wording.
+:::
+
+#### Part (f)
+
+Describe the bias-variance trade-off when considering the use of a mechanistic or empirically driven model. 
+
+::: {.callout-tip icon="false"}
+## Solution
+ 
+More flexible models have higher variance and low bias since they fit to the data. This would mean that an empirically driven model would have higher variance and lower bias relative to a mechanistic model. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I had the right ideas, but I could have expanded on them more. For example, I could have mentioned that fitting into the frame idea with the mechanistic model.
+
+:::
+
+### Question 5 
+
+Explain the difference between a regression and classification machine learning (ML) problems.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+A regression machine learning problem aims to produce a numeric prediction (such as temperature or price) whereas a classification problem predicts a categorical variable (such as weather or who won a sports match). 
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I had the right answer. 
+
+:::
+
+### Question 6 
+
+When splitting the data, why is it useful to stratify by the outcome/target variable? 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+To train models on data that is representative, we want to make sure that the training and testing data has appropriate proportions of the outcome variable. Stratifying sorts the data by the outcome and then assigns it.
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I believe my answer was correct.
+
+:::
+
+### Question 7 
+
+Briefly describe how v-fold cross validation with repeats is used to estimate test RMSE. Also provide an explanation of why we use it. 
+
+::: {.callout-tip icon="false"}
+## Solution
+
+First, you break the data into a training set and a testing set. Say that there are 5 folds. You would shuffle the rows randomly or stratified randomly. Next, you would break this shuffled data into 5 groups. For the first iteration, four of the groups would become the analysis set that is used to train the model, and then this trained model would be tested with the remaining one group (the assessment set). The resulting metrics such as the RMSE are then taken from the predictions on the assessment set. The process used for this iteration would then be repeated so that each of the 5 groups are used as the assessment set one time. If there are repeats, then you would repeat the above process using the training set. This gives many different estimates of the RMSE that can be averaged to estimate what a possible value would be for the test RMSE. 
+
+We use it to expand our testing data, especially for occasions where we are tuning hyperparameters, since we need lots of data to test different levels of the parameters. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I had the right ideas but could have been more specific about why we use it. For example, I could have mentioned the part about reducing variance and bias. 
+
+:::
+
+### Question 8
+
+When might we use a bootstrap resampling procedure instead of v-fold cross validation to estimate test RMSE?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+A bootstrap resampling procedure takes samples with replacement from the data. This makes it better for small data sets, since the data does not have to be partitioned like in cross validation. The variance between samples is also lower for bootstrap resampling than for cross validation. 
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I had basically the same answer.
+
+:::
+### Question 9 
+
+Briefly describe model tuning and why we use it.
+
+::: {.callout-tip icon="false"}
+## Solution
+
+For some models, there are parameters that are required to be predetermined rather than derived from data (called hyperparameters). In order to figure out what the best model hyperparameters might be, tuning is used. Tuning is when several different levels of the model hyperparameters are fitted and then compared. For example, if an elastic net model is being fitted, different levels of a penalty hyperparameter may be explored and then the best of those according to a specific metric would then be chosen. This can also be applied to combinations of hyperparameters which is where a tuning grid comes in. 
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5
+
+## Explanation
+
+I think I captured all of the aspects of the definition that are in the solution.
+
+:::
+
+### Question 10 
+
+What are two common performance metrics when dealing with a regression ML problem?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+The root mean square error (RMSE) is the square root of the sum of the squared residuals (the error between the actual value and the predicted) over the number of observations. It is a measurement of the average error but with a higher penalty for a more extreme prediction because of the squaring. 
+
+The mean absolute error (MAE) is similar in that it estimates the average error except instead of being the sum of squares; it is the mean of the absolute value of the residuals. 
+
+:::
+
+
+What are two common performance metrics when dealing with a classification ML problem?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Accuracy is the proportion/percentage of the total correct categorical predictions out of all of the predicted values. 
+
+Precision is the proportion/percentage of the values that were predicted to be positive that were actually positive. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I have two that are listed in the regression one, but I put precision for the second one when it is not listed (even though it is a metric for classification).
+
+## Updated Solution
+Area under the curve (ROC_AUC) plots the true positive rate against the false positive rate that a model has and then takes the area under the curve. An ideal model has ROC_AUC of 1.
+
+:::
+
+### Question 11
+
+Classify each question/problem below as either prediction or inferential. Explain your reasoning for each.
+
+A company with a subscription based service (for example Netflix, Disney+, New York Times, etc) has data concerning customer interactions with a them, including features like the number of customer service calls, quality of service calls, subscription length, engagement with the service, discounted service, etc. They are interested in two questions:
+
+1. Does a high number of service calls impact a customer's likelihood of churn in the next month (leave the company/drop the service)?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Inferential because we want to determine if the number of service calls has an effect on an outcome variable. 
+
+:::
+
+2. How likely is it that a customer will churn in the next month (leave the company/drop the service)?
+
+::: {.callout-tip icon="false"}
+## Solution
+
+Prediction because we want to determine a probability based on various factors. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4
+
+## Explanation
+
+I was correct but didn't specify the exact variables that were used in the problem. For example, I could have said that the outcome variable was churn in the next month for the first one. For the second one, I did not specify that the probability being predicted is that of whether a customer will churn in the next month or not. 
+
+:::
+

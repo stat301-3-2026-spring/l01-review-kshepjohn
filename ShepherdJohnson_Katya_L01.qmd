@@ -44,7 +44,13 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Supervised machine learning has a response variable that is associated with it, so the first step would be deciding what variable you want to have as the target variable to predict. This decision also includes deciding what type of model will be used such as regression or classification.
+
+Next, we want to clean the data and then split into a training and testing dataset. 
+
+Training models is the next step, possibly with hyperparameter tuning to choose the best possible version of each model. 
+
+After models are trained, comparing them allows for one model to be chosen to use the testing data on. 
 
 :::
 
@@ -70,7 +76,7 @@ In general, we can classify a model by its purpose into 1 of the 3 categories be
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The goal of a descriptive model is to describe patterns or trends in data. 
 
 :::
 
@@ -79,7 +85,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The goal of an inferential model is to answer a research question or take data to test hypotheses.
 
 :::
 
@@ -88,7 +94,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The goal is to take data to make accurate predictions about new data. 
 
 :::
 
@@ -103,7 +109,7 @@ What does it mean to be a mechanistic model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+A mechanistic model is assumed to follow a known formula or equation. It allows you to estaimate a set of parameters. These models are easy to interpret, fast to train, and do not require much data. 
 
 :::
 
@@ -114,7 +120,7 @@ What does it mean to be an empirically driven model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+An empirically driven model has no associated assumptions which makes it more flexible. However, it requires more observations and time to train. 
 
 :::
 
@@ -125,7 +131,7 @@ How does the mechanistic and empirically driven model terminology relate to the 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+A mechanistic model is interchangeable with a parametric one. An empirically driven model is nonparametric because it does not assume that there are parameters involved in a model. 
 
 :::
 
@@ -136,7 +142,7 @@ In general, is a mechanistic or empirically driven model easier to interpret? Ex
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+A mechanistic model is generally easier to explain because it follows a specific equation with estimated parameters. This is different from an empirically driven model because that is built from data only rather than having interpretable parameters. 
 
 :::
 
@@ -147,8 +153,7 @@ How does mechanistic and empirically driven model terminology relate to the idea
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+Empirically driven models are more flexible as they are not restrained by fitting a certain form or by model assumptions like a mechanistic one would be. 
 :::
 
 #### Part (f)
@@ -157,8 +162,8 @@ Describe the bias-variance trade-off when considering the use of a mechanistic o
 
 ::: {.callout-tip icon="false"}
 ## Solution
-
-YOUR SOLUTION HERE
+ 
+More flexible models have higher variance and low bias since they fit to the data. This would mean that an empirically driven model would have higher variance and lower bias relative to a mechanistic model. 
 
 :::
 
@@ -169,8 +174,7 @@ Explain the difference between a regression and classification machine learning 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+A regression machine learning problem aims to produce a numeric prediction (such as temperature or price) whereas a classification problem predicts a categorical variable (such as weather or who won a sports match). 
 :::
 
 ### Question 6 
@@ -180,7 +184,7 @@ When splitting the data, why is it useful to stratify by the outcome/target vari
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+To train models on data that is representative, we want to make sure that the training and testing data has appropriate proportions of the outcome variable. Stratifying sorts the data by the outcome and then assigns it.
 
 :::
 
@@ -193,9 +197,7 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 
 First, you break the data into a training set and a testing set. Say that there are 5 folds. You would shuffle the rows randomly or stratified randomly. Next, you would break this shuffled data into 5 groups. For the first iteration, four of the groups would become the analysis set that is used to train the model, and then this trained model would be tested with the remaining one group (the assessment set). The resulting metrics such as the RMSE are then taken from the predictions on the assessment set. The process used for this iteration would then be repeated so that each of the 5 groups are used as the assessment set one time. If there are repeats, then you would repeat the above process using the training set. This gives many different estimates of the RMSE that can be averaged to estimate what a possible value would be for the test RMSE. 
 
-We use it because...
-
-
+We use it to expand our testing data, especially for occasions where we are tuning hyperparameters, since we need lots of data to test different levels of the parameters. 
 
 :::
 
@@ -206,8 +208,7 @@ When might we use a bootstrap resampling procedure instead of v-fold cross valid
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+A bootstrap resampling procedure takes samples with replacement from the data. This makes it better for small data sets, since the data does not have to be partitioned like in cross validation. The variance between samples is also lower for bootstrap resampling than for cross validation. 
 :::
 
 ### Question 9 
@@ -217,8 +218,7 @@ Briefly describe model tuning and why we use it.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
-
+For some models, there are parameters that are required to be predetermined rather than derived from data (called hyperparameters). In order to figure out what the best model hyperparameters might be, tuning is used. Tuning is when several different levels of the model hyperparameters are fitted and then compared. For example, if an elastic net model is being fitted, different levels of a penalty hyperparameter may be explored and then the best of those according to a specific metric would then be chosen. This can also be applied to combinations of hyperparameters which is where a tuning grid comes in. 
 :::
 
 ### Question 10 
@@ -228,7 +228,9 @@ What are two common performance metrics when dealing with a regression ML proble
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+The root mean square error (RMSE) is the square root of the sum of the squared residuals (the error between the actual value and the predicted) over the number of observations. It is a measurement of the average error but with a higher penalty for a more extreme prediction because of the squaring. 
+
+The mean absolute error (MAE) is similar in that it estimates the average error except instead of being the sum of squares; it is the mean of the absolute value of the residuals. 
 
 :::
 
@@ -237,7 +239,9 @@ What are two common performance metrics when dealing with a classification ML pr
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Accuracy is the proportion/percentage of the total correct categorical predictions out of all of the predicted values. 
+
+Precision is the proportion/percentage of the values that were predicted to be positive that were actually positive. 
 
 :::
 
@@ -252,7 +256,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Inferential because we want to determine if the number of service calls has an effect on an outcome variable. 
 
 :::
 
@@ -261,7 +265,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Prediction because we want to determine a probability based on various factors. 
 
 :::
 
